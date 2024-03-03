@@ -29,7 +29,7 @@ Welcome to my Mini HTML CSS JS Projects repository! This collection includes var
    - Technologies: HTML, CSS.
 
 7. **Random Box Generation Site**
-   - Description: Site that dynamically generates and displays random boxes on each refresh.
+   - Description: Site that dynamically generates Random Boxes on clicking on button and only deletes them if you click the refresh button. LocalStorage concept is used so that it doesn't vanish in page reload.
    - Technologies: HTML, CSS, JavaScript.
 
 8. **Stacking on Scrolling**
