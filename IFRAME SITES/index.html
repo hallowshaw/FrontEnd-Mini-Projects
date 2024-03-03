@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web IFrames</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+        background-image: url("https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png");
+        background-size: cover;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 2em;
+        color: #333333;
+        margin-top: 20px;
+      }
+
+      h2 {
+        font-size: 1.5em;
+        color: #555555;
+        margin-bottom: 10px;
+      }
+
+      section {
+        text-align: center;
+        margin: 20px 0;
+        background-color: rgba(255, 255, 255, 0.5); 
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      #codeDikshaIframe,
+      #codingNinjasIframe,
+      #hackerRankIframe {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        width: 80%;
+        height: 80%;
+        display: none;
+        z-index: 1000;
+        background-color: #eaeaea;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      }
+
+      #AmazonIframe,
+      #FlipkartIframe,
+      #MyntraIframe {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        width: 80%;
+        height: 80%;
+        display: none;
+        z-index: 1000;
+        background-color: #eaeaea;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      }
+
+      #NetflixIframe,
+      #PrimeIframe,
+      #HotstarIframe {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        width: 80%;
+        height: 80%;
+        display: none;
+        z-index: 1000;
+        background-color: #eaeaea;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      }
+
+      #YoutubeIframe,
+      #SpotifyIframe,
+      #IMDBIframe {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        width: 80%;
+        height: 80%;
+        display: none;
+        z-index: 1000;
+        background-color: #eaeaea;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      }
+
+      #codeDikshaIframe:target,
+      #codingNinjasIframe:target,
+      #hackerRankIframe:target {
+        display: block;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      #AmazonIframe:target,
+      #FlipkartIframe:target,
+      #MyntraIframe:target {
+        display: block;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      #NetflixIframe:target,
+      #PrimeIframe:target,
+      #HotstarIframe:target {
+        display: block;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      #YoutubeIframe:target,
+      #SpotifyIframe:target,
+      #IMDBIframe:target {
+        display: block;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      #iframeOverlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: none;
+        z-index: 999;
+      }
+
+      #iframeOverlay:target {
+        display: block;
+      }
+
+      a {
+        display: inline-block;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0.5rem;
+        border: 1px solid #333333;
+        background-color: #555555;
+        color: #ffffff;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      a:hover {
+        background-color: #777777;
+      }
+
+      a.closeButton {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #3498db;
+        color: #fff;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      a.closeButton:hover {
+        background-color: #2980b9;
+      }
+
+      #viewall {
+        display: inline-block;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0.5rem;
+        border: 1px solid #333333;
+        background-color: #116e27;
+        color: #ffffff;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      #viewall:hover {
+        background-color: #063d20;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>WEB-IFRAMES</h1>
+
+
+    <!-- Coding Platforms Iframe -->
+    <section>
+      <h2>Coding Platforms</h2>
+
+      <a href="#codeDikshaIframe">CodeDiksha</a>
+
+      <a href="#codingNinjasIframe">CodingNinjas</a>
+
+      <a href="#hackerRankIframe">HackerRank</a>
+
+      <a id="viewall" href="#">View all</a>
+    </section>
+
+
+    <!-- Shopping Platforms Iframe -->
+    <section>
+      <h2>Shopping Platforms</h2>
+
+      <a href="#AmazonIframe">Amazon</a>
+
+      <a href="#FlipkartIframe">Flipkart</a>
+
+      <a href="#MyntraIframe">Myntra</a>
+
+      <a id="viewall" href="#">View all</a>
+    </section>
+
+
+    <!-- Movie Platforms Iframe -->
+    <section>
+      <h2>Movie Platforms</h2>
+
+      <a href="#NetflixIframe">Netflix</a>
+
+      <a href="#PrimeIframe">Amazon Prime</a>
+
+      <a href="#HotstarIframe">Hotstar</a>
+
+      <a id="viewall" href="#">View all</a>
+    </section>
+
+
+    <!-- Entertainment Platforms Iframe -->
+    <section>
+        <h2>Entertainment Platforms</h2>
+  
+        <a href="#YoutubeIframe">YouTube</a>
+  
+        <a href="#SpotifyIframe">9Anime</a>
+  
+        <a href="#IMDBIframe">Devian Art</a>
+  
+        <a id="viewall" href="#">View all</a>
+      </section>
+
+    <!-- Iframe Overlay -->
+    <div id="iframeOverlay"></div>
+
+    <!-- Codediksha Iframe -->
+    <div id="codeDikshaIframe">
+      <iframe
+        width="100%"
+        height="100%"
+        frameborder="0"
+        allowfullscreen
+        src="https://www.codediksha.com/"
+      ></iframe>
+      <a href="#" class="closeButton">Close</a>
+    </div>
+
+    <!-- CodingNinjas Iframe -->
+    <div id="codingNinjasIframe">
+      <iframe
+        width="100%"
+        height="100%"
+        frameborder="0"
+        allowfullscreen
+        src="https://www.codingninjas.com/"
+      ></iframe>
+      <a href="#" class="closeButton">Close</a>
+    </div>
+
+    <!-- HackerRank Iframe -->
+    <div id="hackerRankIframe">
+      <iframe
+        width="100%"
+        height="100%"
+        frameborder="0"
+        allowfullscreen
+        src="https://www.hackerrank.com/"
+      ></iframe>
+      <a href="#" class="closeButton">Close</a>
+    </div>
+
+    <!-- Amazon Iframe -->
+    <div id="AmazonIframe">
+      <iframe
+        width="100%"
+        height="100%"
+        frameborder="0"
+        allowfullscreen
+        src="https://www.amazon.in/"
+      ></iframe>
+      <a href="#" class="closeButton">Close</a>
+    </div>
+
+    <!-- Flipkart Iframe -->
+    <div id="FlipkartIframe">
+      <iframe
+        width="100%"
+        height="100%"
+        frameborder="0"
+        allowfullscreen
+        src="https://www.flipkart.com/"
+      ></iframe>
+      <a href="#" class="closeButton">Close</a>
+    </div>
+
+    <!-- Myntra Iframe -->
+    <div id="MyntraIframe">
+      <iframe
+        width="100%"
+        height="100%"
+        frameborder="0"
+        allowfullscreen
+        src="https://www.myntra.com/"
+      ></iframe>
+      <a href="#" class="closeButton">Close</a>
+    </div>
+
+    <!-- Netflix Iframe -->
+    <div id="NetflixIframe">
+      <iframe
+        width="100%"
+        height="100%"
+        frameborder="0"
+        allowfullscreen
+        src="https://www.netflix.com/in/"
+      ></iframe>
+      <a href="#" class="closeButton">Close</a>
+    </div>
+
+    <!-- Amazon Prime Iframe -->
+    <div id="PrimeIframe">
+      <iframe
+        width="100%"
+        height="100%"
+        frameborder="0"
+        allowfullscreen
+        src="https://www.primevideo.com/"
+      ></iframe>
+      <a href="#" class="closeButton">Close</a>
+    </div>
+
+    <!-- Hotstar Iframe -->
+    <div id="HotstarIframe">
+      <iframe
+        width="100%"
+        height="100%"
+        frameborder="0"
+        allowfullscreen
+        src="https://www.hotstar.com/in/home?ref=%2Fin"
+      ></iframe>
+      <a href="#" class="closeButton">Close</a>
+    </div>
+
+
+    <!-- Youtube Iframe -->
+    <div id="YoutubeIframe">
+        <iframe
+          width="100%"
+          height="100%"
+          frameborder="0"
+          allowfullscreen
+          src="https://www.youtube.com/"
+        ></iframe>
+        <a href="#" class="closeButton">Close</a>
+      </div>
+
+
+      <!-- Spotify Iframe -->
+    <div id="SpotifyIframe">
+        <iframe
+          width="100%"
+          height="100%"
+          frameborder="0"
+          allowfullscreen
+          src="https://9animes.ph/"
+        ></iframe>
+        <a href="#" class="closeButton">Close</a>
+      </div>
+
+
+      <!-- IMDB Iframe -->
+    <div id="IMDBIframe">
+        <iframe
+          width="100%"
+          height="100%"
+          frameborder="0"
+          allowfullscreen
+          src="https://www.deviantart.com/"
+        ></iframe>
+        <a href="#" class="closeButton">Close</a>
+      </div>
+
+
+
+
+    
+  </body>
+</html>

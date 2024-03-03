@@ -1,0 +1,101 @@
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0%;
+    background-color: rgb(80, 8, 114);
+}
+#main {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+}
+#steam {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    border-radius: 50%;
+    margin-left: 75px;
+    margin-top: -75px;
+    z-index: 0;
+    opacity: 0;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.steam-one {
+    animation: steam-one 4s ease-out infinite;
+}
+.steam-three {
+    animation: steam-one 4s ease-out 1s infinite;
+}
+
+@keyframes steam-one {
+    0% {
+        transform: translate(0, 0) scale(0.25);
+        opacity: 0.25;
+    }
+    100% {
+        transform: translate(30px, -200px) scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes steam-two {
+    0% {
+        transform: translate(0, 0) scale(0.25);
+        opacity: 0.25;
+    }
+    100% {
+        transform: translate(-30px, -200px) scale(1);
+        opacity: 0;
+    }
+}
+
+
+.steam-two {
+    animation: steam-two 4s ease-out 0.5s infinite;
+}
+.steam-four {
+    animation: steam-two 4s ease-out 1.5s infinite;
+}
+
+.cup-body {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    background-color: white;
+    border-radius: 0 0 120px 120px;
+    overflow: hidden;
+    z-index: 1;
+} 
+.cup-shade {
+    position: absolute;
+    width: 300px;
+    height: 370px;
+    margin-left: 40%;
+    margin-top: -10px;
+    background-color: #ebebeb;
+
+}
+.cup-handle {
+    position: relative;
+    right: -40%;
+    width: 75px;
+    height: 80px;      
+    border: 20px solid #ebebeb ;
+    margin-left: 135px;
+    margin-bottom: 95px;
+    border-radius: 0 80px 150px 0;
+}
+.dish {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    border-radius: 0 0 150px 150px;
+    background-color: white;
+    z-index: 1;
+}

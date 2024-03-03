@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shape Creator</title>
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f8f8f8;
+      }
+
+      #container {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 600px; /* Increased container width */
+        max-height: 400px;
+        border: 2px solid #3498db;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .square {
+        box-sizing: border-box;
+        background-color: #2ecc71;
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      }
+
+      .square:hover {
+        background-color: #e74c3c;
+      }
+
+      .controls {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      button {
+        margin-bottom: 10px;
+        padding: 10px 15px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      #btn1 {
+        position: fixed;
+        top: 25px;
+        right: 700px;
+      }
+
+      #btn2 {
+        position: fixed;
+        top: 70px;
+        right: 720px;
+      }
+
+      button:hover {
+        background-color: #2980b9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="controls">
+      <button id="btn1" onclick="createSquare()">Create Square</button>
+      <button id="btn2" onclick="refreshPage()">Refresh</button>
+    </div>
+    <div id="container"></div>
+
+    <script>
+      const storedSquares = localStorage.getItem("squares");
+      const container = document.getElementById("container");
+
+      if (storedSquares) {
+        container.innerHTML = storedSquares;
+      }
+
+      function createSquare() {
+        const square = document.createElement("div");
+        square.className = "square";
+
+        square.style.backgroundColor = getRandomColor();
+
+        container.appendChild(square);
+
+        if (
+          container.scrollHeight > container.clientHeight ||
+          container.scrollWidth > container.clientWidth
+        ) {
+          container.style.maxHeight = container.scrollHeight + "px";
+          container.style.maxWidth = container.scrollWidth + "px";
+        }
+
+        localStorage.setItem("squares", container.innerHTML);
+      }
+
+      function refreshPage() {
+        container.innerHTML = "";
+        localStorage.removeItem("squares");
+      }
+
+      function getRandomColor() {
+        const letters = "0123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+    </script>
+  </body>
+</html>

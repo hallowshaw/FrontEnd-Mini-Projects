@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet"/>
+    <title>Form</title>
+  </head>
+  <font face="Verdana">
+  <body bgcolor="antiquewhite">
+    <center>
+      <h1>
+        <font face="Rubik Doodle Shadow" color="red">
+          <u>Wedding Card of Soumik</u>
+        </font>
+      </h1>
+
+      <strong>
+        <form action="#">
+        <table cellpadding="10">
+          <tr>
+            <td><label for="fullName">Full Name:</label></td>
+            <td>
+              <input
+                type="text"
+                placeholder="Enter your full name"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="phoneNumber">Phone Number:</label></td>
+            <td>
+              <input
+                type="tel"
+                placeholder="Enter your phone number"
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="address">Address:</label></td>
+            <td>
+              <textarea
+                rows="4"
+                placeholder="Enter your address"
+              ></textarea>
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="email">Email:</label></td>
+            <td>
+              <input type="email" placeholder="Enter your email" />
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="memberCount">Member Count:</label></td>
+            <td>
+              <input
+                type="number"
+                placeholder="Enter the number of members"
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td><label>Gender:</label></td>
+            <td>
+                <input type="radio" name="gender" required/>
+                <label for="male">Male</label>
+          
+                <input type="radio" name="gender" required/>
+                <label for="female">Female</label>
+          
+                <input type="radio" name="gender" required/>
+                <label for="other">Other</label>
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="photo">Upload Photo:</label></td>
+            <td>
+              <input type="file" accept="image/*" required />
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="dob">Date of Birth:</label></td>
+            <td><input type="date" required /></td>
+          </tr>
+
+          <tr>
+            <td><label for="resume">Upload Resume (.pdf):</label></td>
+            <td><input type="file" accept=".pdf" required /></td>
+          </tr>
+
+          <tr>
+            <td><label>Food Preference:</label></td>
+            <td>
+              <input type="radio" name="choice" required/>
+              <label for="veg">Vegetarian</label>
+              <input type="radio" name="choice" required/>
+              <label for="nonVeg">Non-Vegetarian</label>
+            </td>
+          </tr>
+        </table>
+        <input type="submit" value="Submit" /> 
+        <input type="reset" value="Clear" />
+      </form>
+    </strong>
+    </center>
+  </body>
+  </font
+</html>
